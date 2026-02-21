@@ -8,18 +8,20 @@ import 'package:mynote_app/Provider/Theme_Provider.dart';
 import 'package:provider/provider.dart';
 
 class ArchivedPage extends StatelessWidget {
+  const ArchivedPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     final _imgprovider = Provider.of<IMGPicker>(context);
     final _themechanger = Provider.of<ThemeProvider>(context);
-    Future<bool> onbackpress() {
-      Navigator.of(context).pop();
-      Navigator.of(context).pop();
-      return Future.value(true);
-    }
 
-    return WillPopScope(
-      onWillPop: onbackpress,
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) {
+        if (didPop) return;
+        Navigator.of(context).pop();
+        Navigator.of(context).pop();
+      },
       child: Scaffold(
         appBar: DefaultAppbar(
           themechanger: _themechanger,
@@ -33,12 +35,7 @@ class ArchivedPage extends StatelessWidget {
           isArchived: true,
         ),
         body: Column(
-          //crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Padding(
-            //   padding: EdgeInsets.only(top: topPadding, bottom: 24),
-            //   child: const Text("Archived"),
-            // ),
             Time(),
             const NoteCollection(isarchived: true),
           ],

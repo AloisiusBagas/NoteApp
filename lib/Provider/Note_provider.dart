@@ -5,7 +5,7 @@ import 'package:mynote_app/Service/Noteservice.dart';
 
 class NoteProvider with ChangeNotifier {
   final NoteService _noteService = const NoteService();
-  Future<List<NoteModel>> listallnote;
+  late Future<List<NoteModel>> listallnote;
 
   String _filter = "";
   String get filter => _filter;
@@ -36,7 +36,7 @@ class NoteProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  Future insertNote(String title, String note, String photoname,
+  Future insertNote(String title, String note, String? photoname,
       String colornote, bool isarchive) async {
     final now = DateTime.now();
     final String datenow = DateFormat.yMd().add_jm().format(now);
@@ -54,7 +54,7 @@ class NoteProvider with ChangeNotifier {
   }
 
   Future updateNote(int id, String createdat, String title, String note,
-      String photoname, String colornote, bool isarchive) async {
+      String? photoname, String colornote, bool isarchive) async {
     final now = DateTime.now();
     final String datenow = DateFormat.yMd().add_jm().format(now);
     final newnote = NoteModel(

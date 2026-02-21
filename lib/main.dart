@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
           builder: (context, child) {
             return ScrollConfiguration(
               behavior: Removescrollglow(),
-              child: child,
+              child: child!,
             );
           },
           theme: theme.getTheme,

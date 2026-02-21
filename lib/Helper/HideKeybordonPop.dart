@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
 class HideKeyboardonPop extends StatelessWidget {
-  final Widget child;
+  final Widget? child;
 
-  const HideKeyboardonPop({Key key, this.child}) : super(key: key);
+  const HideKeyboardonPop({Key? key, this.child}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: true,
+      onPopInvokedWithResult: (didPop, result) {
         FocusScope.of(context).unfocus();
-        return true;
       },
-      child: child,
+      child: child ?? const SizedBox.shrink(),
     );
   }
 }

@@ -1,18 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mynote_app/Constant/NoteColor.dart';
 import 'package:mynote_app/SharedPreferences/NoteColor.dart';
 
 class BgColorprovider with ChangeNotifier {
   //add
-  Color _bgColoradd;
-  Color _appbarColoradd;
-  String _colourtext;
+  Color _bgColoradd = Colors.white;
+  Color _appbarColoradd = Colors.white;
+  String _colourtext = '';
 
   //edit
-  Color _bgcoloredit;
-  Color _appbarcoloredit;
-  String _coloredittext;
+  Color _bgcoloredit = Colors.white;
+  Color _appbarcoloredit = Colors.white;
+  String _coloredittext = '';
 
   Color get bgcoloradd => _bgColoradd;
   Color get appbarcoloradd => _appbarColoradd;
@@ -23,9 +22,7 @@ class BgColorprovider with ChangeNotifier {
   String get coloredittext => _coloredittext;
 
   set setcolortext(String color) => _colourtext = color;
-  //buat di notepagenya pas mau update warna
   set setcoloredittext(String color) => _coloredittext = color;
-  //buat di pick color
   set changecoloredittext(Choice c) => _coloredittext = c.text;
 
   void changecolor(Choice c) {
@@ -38,7 +35,6 @@ class BgColorprovider with ChangeNotifier {
     notifyListeners();
   }
 
-//search bgcolor when edit
   void searchcolor(String text) {
     for (final color in listcolor) {
       if (text == color.text) {
@@ -49,7 +45,6 @@ class BgColorprovider with ChangeNotifier {
     }
   }
 
-//get color from shared preferences
   void getsavecolor(String text) {
     for (final color in listcolor) {
       if (text == color.text) {

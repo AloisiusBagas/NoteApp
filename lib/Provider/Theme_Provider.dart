@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:mynote_app/Constant/Theme.dart';
 
 class ThemeProvider with ChangeNotifier {
-  ThemeProvider(this._themeData);
-  bool get isdarkmode => _isdarkmode;
+  ThemeProvider(this._themeData) {
+    _isdarkmode = false;
+    _state = 0;
+  }
 
   ThemeData _themeData;
-  bool _isdarkmode;
-  int _state;
+  late bool _isdarkmode;
+  late int _state;
 
+  bool get isdarkmode => _isdarkmode;
   int get gestate => _state;
+
   void setState(int state) {
     _state = state;
     notifyListeners();

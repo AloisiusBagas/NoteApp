@@ -8,10 +8,10 @@ import 'package:provider/provider.dart';
 
 class SaveBTN extends StatelessWidget {
   const SaveBTN({
-    Key key,
-    @required this.titlecontroller,
-    @required this.notecontroller,
-    @required BgColorprovider bgcolorprovider,
+    Key? key,
+    required this.titlecontroller,
+    required this.notecontroller,
+    required BgColorprovider bgcolorprovider,
     this.imgpath,
     this.notetemp,
     this.isedit,
@@ -19,19 +19,19 @@ class SaveBTN extends StatelessWidget {
   })  : _bgcolorprovider = bgcolorprovider,
         super(key: key);
 
-  final bool isedit;
-  final bool isarchive;
-  final NoteModel notetemp;
+  final bool? isedit;
+  final bool? isarchive;
+  final NoteModel? notetemp;
   final TextEditingController titlecontroller;
   final TextEditingController notecontroller;
-  final String imgpath;
+  final String? imgpath;
   final BgColorprovider _bgcolorprovider;
 
   bool ischange() {
-    return (titlecontroller.text != notetemp.title) ||
-        (notecontroller.text != notetemp.note) ||
-        (imgpath != notetemp.image) ||
-        (_bgcolorprovider.coloredittext != notetemp.colornote);
+    return (titlecontroller.text != notetemp?.title) ||
+        (notecontroller.text != notetemp?.note) ||
+        (imgpath != notetemp?.image) ||
+        (_bgcolorprovider.coloredittext != notetemp?.colornote);
   }
 
   bool isempty() {
@@ -49,13 +49,13 @@ class SaveBTN extends StatelessWidget {
       onTap: () {
         if (isedit == true && ischange() && isempty() == false) {
           _noteprovider.updateNote(
-              int.parse(notetemp.id.toString()),
-              notetemp.createdat.toString(),
+              notetemp?.id ?? 0,
+              notetemp?.createdat ?? '',
               titlecontroller.text,
               notecontroller.text,
               imgpath,
               _bgcolorprovider.coloredittext,
-              isarchive);
+              isarchive ?? false);
           Navigator.pop(context);
           Fluttertoast.showToast(
               msg: "Note updated successfully",
@@ -66,7 +66,7 @@ class SaveBTN extends StatelessWidget {
               fontSize: 12.0);
         } else if (isedit == false && isempty() == false) {
           _noteprovider.insertNote(titlecontroller.text, notecontroller.text,
-              imgpath, _bgcolorprovider.bgcolortext, isarchive);
+              imgpath, _bgcolorprovider.bgcolortext, isarchive ?? false);
           Navigator.pop(context);
           FocusScope.of(context).unfocus();
           Fluttertoast.showToast(
@@ -94,7 +94,7 @@ class SaveBTN extends StatelessWidget {
         ),
         child: Text(
           "Save",
-          style: Theme.of(context).textTheme.bodyText1.copyWith(
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: _themechanger.isdarkmode == true
                   ? Colors.white
                   : Theme.of(context).primaryColor),

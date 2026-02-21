@@ -6,11 +6,11 @@ import 'package:provider/provider.dart';
 
 class PickColor extends StatefulWidget {
   const PickColor({
-    Key key,
+    Key? key,
     this.bgColorprovider,
   }) : super(key: key);
 
-  final BgColorprovider bgColorprovider;
+  final BgColorprovider? bgColorprovider;
 
   @override
   _PickColorState createState() => _PickColorState();
@@ -21,13 +21,13 @@ class _PickColorState extends State<PickColor> {
   void initState() {
     super.initState();
     getcurrentColor()
-        .then((value) => widget.bgColorprovider.getsavecolor(value));
+        .then((value) => widget.bgColorprovider?.getsavecolor(value));
   }
 
   @override
   Widget build(BuildContext context) {
     final _bgcolorprovider = Provider.of<BgColorprovider>(context);
-    return PopupMenuButton(
+    return PopupMenuButton<Choice>(
         tooltip: "Change Color",
         icon: const Icon(Icons.color_lens),
         onSelected: (Choice value) {
@@ -36,7 +36,7 @@ class _PickColorState extends State<PickColor> {
         },
         itemBuilder: (BuildContext context) {
           return listcolor.map((Choice e) {
-            return PopupMenuItem(
+            return PopupMenuItem<Choice>(
               value: e,
               child: Row(
                 children: <Widget>[
@@ -45,9 +45,7 @@ class _PickColorState extends State<PickColor> {
                     height: 15,
                     color: e.colorlight,
                   ),
-                  const SizedBox(
-                    width: 10,
-                  ),
+                  const SizedBox(width: 10),
                   Text(e.text)
                 ],
               ),

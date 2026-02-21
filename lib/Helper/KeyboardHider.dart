@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class KeyboardHider extends StatelessWidget {
-  const KeyboardHider({@required this.child});
+  const KeyboardHider({required this.child, super.key});
 
   final Widget child;
 

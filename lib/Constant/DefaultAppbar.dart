@@ -9,8 +9,8 @@ import 'ConstColor.dart';
 
 class DefaultAppbar extends StatelessWidget implements PreferredSizeWidget {
   const DefaultAppbar({
-    Key key,
-    @required ThemeProvider themechanger,
+    Key? key,
+    required ThemeProvider themechanger,
     this.title,
     this.isUseThemeMode,
     this.isUseArchive,
@@ -19,10 +19,10 @@ class DefaultAppbar extends StatelessWidget implements PreferredSizeWidget {
         super(key: key);
 
   final ThemeProvider _themechanger;
-  final String title;
-  final IconData iconData;
-  final bool isUseThemeMode;
-  final bool isUseArchive;
+  final String? title;
+  final IconData? iconData;
+  final bool? isUseThemeMode;
+  final bool? isUseArchive;
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +37,8 @@ class DefaultAppbar extends StatelessWidget implements PreferredSizeWidget {
               size: 20,
             ),
           const SizedBox(width: 8),
-          Text(title,
-              style: Theme.of(context).textTheme.headline6.copyWith(
+          Text(title ?? '',
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   fontSize: 19,
                   color: _themechanger.isdarkmode == true
                       ? Colors.white
@@ -50,11 +50,11 @@ class DefaultAppbar extends StatelessWidget implements PreferredSizeWidget {
           padding: const EdgeInsets.only(right: 10),
           child: Row(
             children: [
-              if (isUseThemeMode)
+              if (isUseThemeMode == true)
                 Riverslider(
                   themechanger: _themechanger,
                 ),
-              if (isUseArchive)
+              if (isUseArchive == true)
                 IconButton(
                   color: _themechanger.isdarkmode == true
                       ? Colors.white
@@ -76,6 +76,5 @@ class DefaultAppbar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(AppBar().preferredSize.height);
 }

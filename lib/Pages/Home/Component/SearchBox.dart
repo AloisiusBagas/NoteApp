@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mynote_app/Provider/Note_provider.dart';
 import 'package:mynote_app/Provider/Theme_Provider.dart';
@@ -8,20 +7,20 @@ import 'package:provider/provider.dart';
 
 class Debouncer {
   Debouncer({this.miliseconds});
-  final int miliseconds;
-  Timer _timer;
+  final int? miliseconds;
+  Timer? _timer;
 
   Future run(VoidCallback action) async {
     if (_timer != null) {
-      _timer.cancel();
+      _timer!.cancel();
     }
-    _timer = Timer(Duration(milliseconds: miliseconds), action);
+    _timer = Timer(Duration(milliseconds: miliseconds ?? 500), action);
   }
 }
 
 class SearchBox extends StatefulWidget {
   const SearchBox({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

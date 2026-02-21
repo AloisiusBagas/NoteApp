@@ -3,14 +3,14 @@ import 'package:mynote_app/Constant/ConstColor.dart';
 
 TextTheme basetextTheme(TextTheme base) {
   return base.copyWith(
-    headline6: base.bodyText1.copyWith(fontFamily: 'Montserrat Bold'),
-    bodyText1: base.bodyText1.copyWith(fontFamily: 'Montserrat SemiBold'),
-    headline2:
-        base.headline1.copyWith(fontWeight: FontWeight.w600, fontSize: 14),
-    subtitle1:
-        base.subtitle1.copyWith(fontSize: 15.5, fontWeight: FontWeight.normal),
-    subtitle2:
-        base.subtitle2.copyWith(fontSize: 12, fontWeight: FontWeight.normal),
+    titleLarge: base.bodyMedium!.copyWith(fontFamily: 'Montserrat Bold'),
+    bodyMedium: base.bodyMedium!.copyWith(fontFamily: 'Montserrat SemiBold'),
+    headlineMedium:
+        base.displaySmall!.copyWith(fontWeight: FontWeight.w600, fontSize: 14),
+    titleMedium: base.titleMedium!
+        .copyWith(fontSize: 15.5, fontWeight: FontWeight.normal),
+    bodySmall:
+        base.bodySmall!.copyWith(fontSize: 12, fontWeight: FontWeight.normal),
   );
 }
 
@@ -25,7 +25,8 @@ ThemeData lighttheme() {
       textTheme:
           basetextTheme(base.textTheme).apply(displayColor: Colors.grey[800]),
       scaffoldBackgroundColor: orangeBGColor,
-      appBarTheme: const AppBarTheme(color: Colors.white, elevation: 0));
+      appBarTheme:
+          const AppBarTheme(backgroundColor: Colors.white, elevation: 0));
 }
 
 ThemeData darktheme() {
@@ -41,7 +42,7 @@ ThemeData darktheme() {
       iconTheme: const IconThemeData(color: Color(0xFFE2E2E2)),
       scaffoldBackgroundColor: greyBGColor,
       appBarTheme: const AppBarTheme(
-          color: darkGrey,
+          backgroundColor: darkGrey,
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.white)));
 }

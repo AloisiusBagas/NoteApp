@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class NoteBTN extends StatelessWidget {
   const NoteBTN({
-    Key key,
+    Key? key,
     this.text,
     this.icon,
     this.onpress,
@@ -11,21 +11,21 @@ class NoteBTN extends StatelessWidget {
   }) : super(key: key);
 
   final bool isedit;
-  final String text;
-  final IconData icon;
-  final VoidCallback onpress;
-  final Color color;
+  final String? text;
+  final IconData? icon;
+  final VoidCallback? onpress;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
         width: MediaQuery.of(context).size.width / 2,
         child: ElevatedButton(
-          onPressed: isedit ? () => onpress() : null,
+          onPressed: isedit ? onpress : null,
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.resolveWith<Color>(
-              (Set<MaterialState> states) {
-                if (states.contains(MaterialState.disabled)) {
+            backgroundColor: WidgetStateProperty.resolveWith<Color?>(
+              (Set<WidgetState> states) {
+                if (states.contains(WidgetState.disabled)) {
                   return Colors.grey[300];
                 }
                 return color;
@@ -40,7 +40,7 @@ class NoteBTN extends StatelessWidget {
                 color: Colors.white,
               ),
               Text(
-                text,
+                text ?? '',
                 style: const TextStyle(color: Colors.white),
               )
             ],

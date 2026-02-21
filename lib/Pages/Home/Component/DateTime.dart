@@ -3,24 +3,28 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class Time extends StatefulWidget {
+  const Time({super.key});
+
   @override
   _TimeState createState() => _TimeState();
 }
 
 class _TimeState extends State<Time> {
-  String date;
-  String day;
-  String month;
-  String clock;
+  late String date;
+  late String day;
+  late String month;
+  late String clock;
+
   @override
   void initState() {
-    date = DateFormat('dd').format(DateTime.now());
-    day = DateFormat('EEE').format(DateTime.now());
-    month = DateFormat('MMM, yyyy').format(DateTime.now());
-    clock = DateFormat.Hm().format(DateTime.now());
+    super.initState();
+    final now = DateTime.now();
+    date = DateFormat('dd').format(now);
+    day = DateFormat('EEE').format(now);
+    month = DateFormat('MMM, yyyy').format(now);
+    clock = DateFormat.Hm().format(now);
     const oneSec = Duration(seconds: 1);
     Timer.periodic(oneSec, (Timer t) => getTime());
-    super.initState();
   }
 
   void getTime() {
@@ -55,9 +59,7 @@ class _TimeState extends State<Time> {
                     fontSize: 36,
                     color: Colors.white),
               ),
-              const SizedBox(
-                width: 5,
-              ),
+              const SizedBox(width: 5),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -65,8 +67,8 @@ class _TimeState extends State<Time> {
                     day,
                     style: Theme.of(context)
                         .textTheme
-                        .bodyText1
-                        .copyWith(fontSize: 13, color: Colors.white),
+                        .bodyMedium
+                        ?.copyWith(fontSize: 13, color: Colors.white),
                   ),
                   Text(
                     month,
