@@ -1,6 +1,4 @@
-include: package:lint/analysis_options.yaml
-
 linter:
-  rules:    
-     file_names : false
-     use_setters_to_change_properties : false
+  rules:
+    file_names: false
+    use_setters_to_change_properties: false
