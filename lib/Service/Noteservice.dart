@@ -15,7 +15,7 @@ class NoteService {
 
   Future<bool> deleteNote(int id) async {
     final res = await noteDao.deleteNote(id);
-    if (res > 0 != null) {
+    if (res > 0) {
       return true;
     } else {
       return false;

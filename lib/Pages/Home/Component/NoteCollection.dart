@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 
 class NoteCollection extends StatelessWidget {
   const NoteCollection({
-    Key key,
+    Key? key,
     this.isarchived = false,
   }) : super(key: key);
   final bool isarchived;
@@ -23,7 +23,7 @@ class NoteCollection extends StatelessWidget {
                 topLeft: Radius.circular(13), topRight: Radius.circular(13)),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.2),
+                color: Colors.black.withValues(alpha: 0.2),
                 offset: const Offset(6.0, -4.0),
                 blurRadius: 4.0,
               )

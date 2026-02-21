@@ -4,12 +4,12 @@ import 'package:mynote_app/Pages/Lock/Lockscreen.dart';
 
 class HeaderContent extends StatelessWidget {
   const HeaderContent({
-    Key key,
-    @required this.pinCircleradius,
-    @required this.pinone,
-    @required this.pintwo,
-    @required this.pinthree,
-    @required this.pinfour,
+    Key? key,
+    required this.pinCircleradius,
+    required this.pinone,
+    required this.pintwo,
+    required this.pinthree,
+    required this.pinfour,
     this.errorMessage,
     this.title,
     this.subtitle,
@@ -21,9 +21,9 @@ class HeaderContent extends StatelessWidget {
   final bool pintwo;
   final bool pinthree;
   final bool pinfour;
-  final String errorMessage;
-  final String title;
-  final String subtitle;
+  final String? errorMessage;
+  final String? title;
+  final String? subtitle;
   final bool ischangepass;
 
   @override
@@ -34,17 +34,18 @@ class HeaderContent extends StatelessWidget {
       padding: EdgeInsets.only(top: paddingtop, bottom: paddingheader),
       child: Column(
         children: [
-          const SizedBox(
-            height: 15,
-          ),
+          const SizedBox(height: 15),
           Text(
-            title,
-            style: Theme.of(context).textTheme.headline2.copyWith(fontSize: 20),
+            title ?? '',
+            style: Theme.of(context)
+                .textTheme
+                .headlineMedium
+                ?.copyWith(fontSize: 20),
           ),
           const SizedBox(height: 17),
-          Text(subtitle,
+          Text(subtitle ?? '',
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.subtitle1),
+              style: Theme.of(context).textTheme.titleMedium),
           const SizedBox(height: 30),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -57,7 +58,7 @@ class HeaderContent extends StatelessWidget {
           ),
           const SizedBox(height: 30),
           Text(
-            errorMessage,
+            errorMessage ?? '',
             style: const TextStyle(
                 color: Colors.redAccent,
                 fontSize: 12,
@@ -77,8 +78,8 @@ class HeaderContent extends StatelessWidget {
                   "Change Password?",
                   style: Theme.of(context)
                       .textTheme
-                      .subtitle2
-                      .copyWith(fontSize: 12, fontWeight: FontWeight.w500),
+                      .bodySmall
+                      ?.copyWith(fontSize: 12, fontWeight: FontWeight.w500),
                 ),
               ),
             )

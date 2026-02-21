@@ -8,22 +8,22 @@ class NoteModel {
     this._sortdate,
     this._colornote,
   );
-  int _id;
-  int _isarchived;
+  int? _id;
+  int? _isarchived;
   final String _title;
   final String _note;
-  final String _photoname;
+  final String? _photoname;
   final String _createdat;
   final String _updateat;
   final String _sortdate;
   final String _colornote;
 
   //getter
-  int get id => _id;
-  int get isarchived => _isarchived;
+  int get id => _id ?? 0;
+  int get isarchived => _isarchived ?? 0;
   String get title => _title;
   String get note => _note;
-  String get image => _photoname;
+  String? get image => _photoname;
   String get createdat => _createdat;
   String get updateat => _updateat;
   String get sortdate => _sortdate;

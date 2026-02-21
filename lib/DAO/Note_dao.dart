@@ -5,7 +5,7 @@ import 'package:mynote_app/Model/NoteModel.dart';
 class NoteDao {
   const NoteDao();
 
-  Future<List<NoteModel>> getAll({int isarchived}) async {
+  Future<List<NoteModel>> getAll({int? isarchived}) async {
     final _db = await DBManager.getinstance();
     final list = await _db.rawQuery(
         "SELECT * FROM ${DatabaseHelper.tablename} WHERE ${DatabaseHelper.columnIsarchive} == $isarchived  ORDER BY ${DatabaseHelper.columnSortdate} DESC");

@@ -15,7 +15,7 @@ import 'package:provider/provider.dart';
 
 class NotePage extends StatefulWidget {
   const NotePage(
-      {Key key,
+      {Key? key,
       this.isedit = false,
       this.notetemp,
       this.bgcolorprovider,
@@ -25,9 +25,9 @@ class NotePage extends StatefulWidget {
 
   final bool isedit;
   final bool isarchive;
-  final NoteModel notetemp;
-  final BgColorprovider bgcolorprovider;
-  final IMGPicker imgprovider;
+  final NoteModel? notetemp;
+  final BgColorprovider? bgcolorprovider;
+  final IMGPicker? imgprovider;
 
   @override
   _NotePageState createState() => _NotePageState();
@@ -36,15 +36,16 @@ class NotePage extends StatefulWidget {
 class _NotePageState extends State<NotePage> {
   TextEditingController titlecontroller = TextEditingController();
   TextEditingController notecontroller = TextEditingController();
-  String imgpath;
+  String? imgpath;
+
   @override
   void initState() {
-    if (widget.isedit == true) {
-      widget.imgprovider.setimgpath = widget.notetemp.image;
-      titlecontroller.text = widget.notetemp.title;
-      notecontroller.text = widget.notetemp.note;
-      widget.bgcolorprovider.searchcolor(widget.notetemp.colornote);
-      widget.bgcolorprovider.setcoloredittext = widget.notetemp.colornote;
+    if (widget.isedit == true && widget.notetemp != null) {
+      widget.imgprovider?.setimgpath = widget.notetemp!.image;
+      titlecontroller.text = widget.notetemp!.title;
+      notecontroller.text = widget.notetemp!.note;
+      widget.bgcolorprovider?.searchcolor(widget.notetemp!.colornote);
+      widget.bgcolorprovider?.setcoloredittext = widget.notetemp!.colornote;
     }
     super.initState();
   }
@@ -53,14 +54,14 @@ class _NotePageState extends State<NotePage> {
   void dispose() {
     titlecontroller.dispose();
     notecontroller.dispose();
-    widget.imgprovider.resetimage();
+    widget.imgprovider?.resetimage();
     imgpath = null;
     super.dispose();
   }
 
   void deleteimage() {
     setState(() {
-      widget.imgprovider.resetimage();
+      widget.imgprovider?.resetimage();
       imgpath = null;
     });
   }
@@ -134,7 +135,7 @@ class _NotePageState extends State<NotePage> {
                                         deleteimage: deleteimage,
                                       )));
                             },
-                            child: Image.memory(base64Decode(imgpath)))
+                            child: Image.memory(base64Decode(imgpath!)))
                       else
                         Container(),
                       TextField(
@@ -155,7 +156,7 @@ class _NotePageState extends State<NotePage> {
             Padding(
               padding: const EdgeInsets.only(bottom: 10),
               child: Text(widget.isedit == true
-                  ? "Edited at : ${widget.notetemp.updateat}"
+                  ? "Edited at : ${widget.notetemp?.updateat}"
                   : DateFormat.yMd().add_jm().format(DateTime.now())),
             )
           ],

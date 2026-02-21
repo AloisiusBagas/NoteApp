@@ -12,7 +12,7 @@ import 'package:provider/provider.dart';
 
 class LockScreen extends StatefulWidget {
   const LockScreen(
-      {Key key,
+      {Key? key,
       this.isChangePassword = false,
       this.isFinalChangePassword = false})
       : super(key: key);

@@ -5,18 +5,18 @@ import 'package:provider/provider.dart';
 
 class KeyboardButton extends StatelessWidget {
   const KeyboardButton({
-    Key key,
+    Key? key,
     this.onpress,
     this.number,
     this.radius,
     this.text,
     this.icon,
   }) : super(key: key);
-  final double radius;
-  final int number;
-  final String text;
-  final Icon icon;
-  final Function onpress;
+  final double? radius;
+  final int? number;
+  final String? text;
+  final Icon? icon;
+  final Function? onpress;
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +32,9 @@ class KeyboardButton extends StatelessWidget {
       child: MaterialButton(
         highlightColor: _themechanger.isdarkmode ? Colors.grey : orangeBGColor,
         height: radius,
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),
-        onPressed: () => onpress(),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(radius ?? 50)),
+        onPressed: onpress != null ? () => onpress!() : null,
         child: icon != null
             ? icon
             : number != null
@@ -47,7 +47,7 @@ class KeyboardButton extends StatelessWidget {
                             _themechanger.isdarkmode ? Colors.white : darkGrey),
                   )
                 : FittedBox(
-                    child: Text(text,
+                    child: Text(text ?? '',
                         style: TextStyle(
                             color: _themechanger.isdarkmode
                                 ? Colors.white

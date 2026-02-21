@@ -10,10 +10,10 @@ class DBManager {
 
   static final DBManager _instance = DBManager.internal();
 
-  static Database _db;
+  static Database? _db;
 
   static Future<Database> getinstance() async {
-    if (_db != null) return _db;
+    if (_db != null) return _db!;
     final io.Directory directory = await getApplicationSupportDirectory();
     final String path = join(directory.path, DatabaseHelper.dbname);
     return _db = await openDatabase(

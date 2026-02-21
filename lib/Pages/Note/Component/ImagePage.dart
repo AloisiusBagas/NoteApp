@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:mynote_app/Constant/ConstColor.dart';
 
 class Imagepage extends StatelessWidget {
-  final Function deleteimage;
-  final String imgpath;
+  final Function? deleteimage;
+  final String? imgpath;
 
-  const Imagepage({Key key, this.imgpath, this.deleteimage}) : super(key: key);
+  const Imagepage({Key? key, this.imgpath, this.deleteimage}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +19,7 @@ class Imagepage extends StatelessWidget {
                 tooltip: "Delete",
                 icon: const Icon(Icons.delete),
                 onPressed: () {
-                  deleteimage();
+                  deleteimage?.call();
                   Navigator.pop(context);
                 })
           ],
@@ -27,7 +27,7 @@ class Imagepage extends StatelessWidget {
         body: Center(
           child: InteractiveViewer(
             child: Image.memory(
-              base64Decode(imgpath),
+              base64Decode(imgpath ?? ''),
             ),
           ),
         ));

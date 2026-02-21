@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-String archivedPin;
+String? archivedPin;
 
 Future savePin(String value) async {
   final SharedPreferences pref = await SharedPreferences.getInstance();

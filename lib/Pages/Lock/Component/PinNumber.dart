@@ -5,9 +5,9 @@ import 'package:provider/provider.dart';
 
 class PinNumber extends StatelessWidget {
   const PinNumber({
-    Key key,
-    @required this.pinCircleradius,
-    @required this.isActive,
+    Key? key,
+    required this.pinCircleradius,
+    required this.isActive,
   }) : super(key: key);
 
   final double pinCircleradius;

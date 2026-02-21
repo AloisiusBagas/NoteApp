@@ -10,13 +10,13 @@ import 'package:mynote_app/Pages/Note/Component/NoteButton.dart';
 
 class Bottomnavbar extends StatefulWidget {
   const Bottomnavbar({
-    Key key,
+    Key? key,
     this.isedit,
     this.notetemp,
   }) : super(key: key);
 
-  final bool isedit;
-  final NoteModel notetemp;
+  final bool? isedit;
+  final NoteModel? notetemp;
 
   @override
   _BottomnavbarState createState() => _BottomnavbarState();
@@ -29,17 +29,18 @@ class _BottomnavbarState extends State<Bottomnavbar> {
     final _themechanger = Provider.of<ThemeProvider>(context);
     final _imgpicker = Provider.of<IMGPicker>(context);
     return Container(
-      height: MediaQuery.of(context).size.height / 8,
+      height: MediaQuery.of(context).size.height / 12,
       color: Colors.amber,
       child: Row(
         children: [
           NoteBTN(
-            isedit: widget.isedit,
+            isedit: widget.isedit ?? false,
             color: Colors.red,
             icon: Icons.delete,
             text: "delete",
             onpress: () {
-              deletealert(context, _noteprovider, false, widget.notetemp.id);
+              deletealert(
+                  context, _noteprovider, false, widget.notetemp?.id ?? 0);
             },
           ),
           NoteBTN(
