@@ -13,15 +13,11 @@ A creative and aesthetically pleasing note-taking application built with Flutter
 
 ## 📸 Screenshots
 
-```carousel
-![Main Screen](assets/Demo/Screenshot_1771658060.png)
-<!-- slide -->
-![Note Detail](assets/Demo/Screenshot_1771658066.png)
-<!-- slide -->
-![Color Picker](assets/Demo/Screenshot_1771689875.png)
-<!-- slide -->
-![Image Attachment](assets/Demo/Screenshot_1771690462.png)
-```
+|                      Main Screen                       |                        Note Detail                         |
+| :----------------------------------------------------: | :--------------------------------------------------------: |
+| ![Main Screen](assets/Demo/Screenshot_1771658060.png)  |   ![Note Detail](assets/Demo/Screenshot_1771658066.png)    |
+|                    **Color Picker**                    |                    **Image Attachment**                    |
+| ![Color Picker](assets/Demo/Screenshot_1771689875.png) | ![Image Attachment](assets/Demo/Screenshot_1771690462.png) |
 
 ## 🚀 Getting Started
 
