@@ -1,27 +1,77 @@
-## Asset
-#### Rive
-- [switch_daytime](https://rive.app/a/hoangnguyen/files/flare/switch_daytime/embed) 
-#### Font
-- DS-DIGIB
-- Montserrat-Bold 
-- Montserrat-Medium
-- Montserrat-SemiBold
-## package used
-- animations: ^2.0.0
-- cupertino_icons: ^1.0.2
-- flare_flutter: ^2.0.6
-- flutter_native_image: ^0.0.5+3
-- flutter_staggered_grid_view: ^0.3.2
-- flutter_svg: ^0.22.0
-- fluttertoast: ^7.1.1
-- focused_menu: ^1.0.1
-- image_picker: ^0.6.7+22
-- intl: ^0.17.0
-- lint: ^1.1.1
-- path_provider: ^2.0.1
-- provider: ^5.0.0
-- shared_preferences: ^2.0.3
-- sqflite: ^2.0.0+2
-- toast: ^0.1.5
-- flutter_launcher_icons: ^0.9.0
-- flutter_native_splash: ^1.1.8+4
+# NoteApp 📝
+
+A creative and aesthetically pleasing note-taking application built with Flutter. Organize your thoughts, capture moments with images, and personalize your experience with a vibrant design.
+
+## ✨ Features
+
+- **Personalized Notes**: Assign unique colors to each note for better organization and visual appeal.
+- **Image Integration**: Attach images to your notes directly from your gallery or camera.
+- **Smart Layout**: Utilizes a staggered grid layout for a dynamic and modern user interface.
+- **Rich Animations**: Smooth transitions and interactive elements powered by Rive and Flutter's animation package.
+- **Local Storage**: Your data stays on your device using local SQLite database.
+- **Digital Vibe**: Unique typography and dark-mode friendly design.
+
+## 📸 Screenshots
+
+```carousel
+![Main Screen](file:///d:/My%20Project/NoteApp/assets/Demo/Screenshot_1771658060.png)
+<!-- slide -->
+![Note Detail](file:///d:/My%20Project/NoteApp/assets/Demo/Screenshot_1771658066.png)
+<!-- slide -->
+![Color Picker](file:///d:/My%20Project/NoteApp/assets/Demo/Screenshot_1771689875.png)
+<!-- slide -->
+![Image Attachment](file:///d:/My%20Project/NoteApp/assets/Demo/Screenshot_1771690048.png)
+<!-- slide -->
+![Note List 1](file:///d:/My%20Project/NoteApp/assets/Demo/Screenshot_1771690085.png)
+<!-- slide -->
+![Note List 2](file:///d:/My%20Project/NoteApp/assets/Demo/Screenshot_1771690088.png)
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed on your local machine:
+
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) (version >= 3.0.0)
+- [Dart SDK](https://dart.dev/get-dart) (version >= 3.0.0)
+- Android Studio or VS Code with Flutter extensions.
+
+### Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/AloisiusBagas/NoteApp.git
+   cd NoteApp
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   flutter pub get
+   ```
+
+3. **Run the application:**
+   ```bash
+   flutter run
+   ```
+
+## 🛠️ Built With
+
+- **Flutter** - UI Framework
+- **Provider** - State Management
+- **SQLite (sqflite)** - Local Database
+- **Rive** - Interactive Animations
+- **Staggered Grid** - Dynamic Layouts
+
+## 💎 Assets & Acknowledgments
+
+- **Animations**: [switch_daytime](https://rive.app/a/hoangnguyen/files/flare/switch_daytime/embed) by Hoang Nguyen.
+- **Fonts**:
+  - DS Digital
+  - Montserrat (Bold, Medium, SemiBold)
+
+---
+
+_Developed with ❤️ by [Aloisius Bagas](https://github.com/AloisiusBagas)_

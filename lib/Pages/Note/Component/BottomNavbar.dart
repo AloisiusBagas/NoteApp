@@ -29,7 +29,7 @@ class _BottomnavbarState extends State<Bottomnavbar> {
     final _themechanger = Provider.of<ThemeProvider>(context);
     final _imgpicker = Provider.of<IMGPicker>(context);
     return Container(
-      height: MediaQuery.of(context).size.height / 8,
+      height: MediaQuery.of(context).size.height / 12,
       color: Colors.amber,
       child: Row(
         children: [

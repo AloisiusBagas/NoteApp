@@ -23,6 +23,11 @@ class NoteBTN extends StatelessWidget {
         child: ElevatedButton(
           onPressed: isedit ? onpress : null,
           style: ButtonStyle(
+            shape: WidgetStateProperty.all(
+              const RoundedRectangleBorder(
+                borderRadius: BorderRadius.zero,
+              ),
+            ),
             backgroundColor: WidgetStateProperty.resolveWith<Color?>(
               (Set<WidgetState> states) {
                 if (states.contains(WidgetState.disabled)) {
