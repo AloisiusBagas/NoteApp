@@ -14,17 +14,13 @@ A creative and aesthetically pleasing note-taking application built with Flutter
 ## 📸 Screenshots
 
 ```carousel
-![Main Screen](file:///d:/My%20Project/NoteApp/assets/Demo/Screenshot_1771658060.png)
+![Main Screen](assets/Demo/Screenshot_1771658060.png)
 <!-- slide -->
-![Note Detail](file:///d:/My%20Project/NoteApp/assets/Demo/Screenshot_1771658066.png)
+![Note Detail](assets/Demo/Screenshot_1771658066.png)
 <!-- slide -->
-![Color Picker](file:///d:/My%20Project/NoteApp/assets/Demo/Screenshot_1771689875.png)
+![Color Picker](assets/Demo/Screenshot_1771689875.png)
 <!-- slide -->
-![Image Attachment](file:///d:/My%20Project/NoteApp/assets/Demo/Screenshot_1771690048.png)
-<!-- slide -->
-![Note List 1](file:///d:/My%20Project/NoteApp/assets/Demo/Screenshot_1771690085.png)
-<!-- slide -->
-![Note List 2](file:///d:/My%20Project/NoteApp/assets/Demo/Screenshot_1771690088.png)
+![Image Attachment](assets/Demo/Screenshot_1771690462.png)
 ```
 
 ## 🚀 Getting Started
